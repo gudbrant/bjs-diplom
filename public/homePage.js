@@ -43,5 +43,7 @@ ApiConnector.getFavorites(response => response.success ? (favoritesWidget.clearT
 
 
 favoritesWidget.addUserCallback = data => { ApiConnector.addUserToFavorites(data, response => response.success ? (favoritesWidget.clearTable(), favoritesWidget.fillTable(response.data), moneyManager.updateUsersList(response.data), favoritesWidget.setMessage(response.success, `Пользователь ${data.name}(id:${data.id}) успешно добавлен в избранное`)) : favoritesWidget.setMessage(response.success, response.error)) };
-/*Удаление пользователя */
+
+
+
 favoritesWidget.removeUserCallback = data => { ApiConnector.removeUserFromFavorites(data, response => response.success ? (favoritesWidget.clearTable(), favoritesWidget.fillTable(response.data), moneyManager.updateUsersList(response.data), favoritesWidget.setMessage(response.success, `Пользователь id:${id} успешно удален из избранного`)) : favoritesWidget.setMessage(response.success, response.error)) };
